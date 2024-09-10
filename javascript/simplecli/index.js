@@ -15,5 +15,5 @@ else if (args.includes('--help')){
             --help     Brings up this message
         `)
 }else{
-    console.log("fuck")
+    console.error("fuck")
 }
