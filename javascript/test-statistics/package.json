@@ -1,0 +1,14 @@
+{
+  "name": "test-statistics",
+  "version": "1.0.0",
+  "description": "this is a test statistics file",
+  "main": "index.js",
+  "bin": {
+    "test-statistics": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew V",
+  "license": "ISC"
+}
