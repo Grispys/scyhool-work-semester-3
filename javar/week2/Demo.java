@@ -2,6 +2,7 @@ package javar.week2;
 
 public class Demo {
 
+    @SuppressWarnings("unused")
     public static void main(String[] args){
         rectangle r1 = new rectangle();
         rectangle r2 = new rectangle();
