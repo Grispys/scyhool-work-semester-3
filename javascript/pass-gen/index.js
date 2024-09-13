@@ -104,9 +104,14 @@ if (userArguments.includes('--help')){
 
 }else if (userArguments.includes('--pwmake') && customArg.includes('s')){
     console.log("New Password: " +  generateWSym(length))
+
 }else if (userArguments.includes('--pwmake') && customArg.includes('c')){
     console.log("New Password: " +  generateWCaps(length))
 }else if (userArguments.includes('--pwmake')&& customArg.includes('a')){
     console.log("New Password: " +  generateWAll(length))
+}else if (userArguments.includes('--pwmake')&& customArg.includes('')){
+    console.log("New Password: " + generateDefault(length))
+}else{
+    console.log("New Password: " + generateDefault(length))
 }
 
