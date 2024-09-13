@@ -44,6 +44,43 @@ function generateWNums(value) {
 }
 
 
+// password generator that allows symbols
+function generateWSym(value) {
+    let result = ' ';
+    let length = value;
+    const characters='abcdefghijklmnopqrstuvwxyz!@#$%^&*()<>?[]=-+_/'; //both letters and numbers
+    for(let i = 0; i < length; i++) {
+        const randomChars = Math.floor(Math.random() * characters.length);
+        result += characters[randomChars]
+    }
+    return result;
+}
+
+// password generator that allows capitals
+function generateWCaps(value) {
+    let result = ' ';
+    let length = value;
+    const characters='ABCDEFGHIJKLMNOPQRSTUVWXZ'; //both letters and numbers
+    for(let i = 0; i < length; i++) {
+        const randomChars = Math.floor(Math.random() * characters.length);
+        result += characters[randomChars]
+    }
+    return result;
+}
+
+// password generator that allows everything
+function generateWAll(value) {
+    let result = ' ';
+    let length = value;
+    const characters='ABCDEFGHIJKLMNOPQRSTUVWXZabcdefghijklmnopqrstuvwxyz!@#$%^&*()<>?[]=-+_/1234567890'; //both letters and numbers
+    for(let i = 0; i < length; i++) {
+        const randomChars = Math.floor(Math.random() * characters.length);
+        result += characters[randomChars]
+    }
+    return result;
+}
+
+// check whats in the user arguments and respond accordingly
 if (userArguments.includes('--help')){
     console.error(`
         Usage:
@@ -65,7 +102,11 @@ if (userArguments.includes('--help')){
 }else if (userArguments.includes('--pwmake') && customArg.includes('n')){
     console.log("New Password: " +  generateWNums(length))
 
-}else if (userArguments.includes('--pwmake')){
-    console.log("New Password: " +  generateDefault(length))
+}else if (userArguments.includes('--pwmake') && customArg.includes('s')){
+    console.log("New Password: " +  generateWSym(length))
+}else if (userArguments.includes('--pwmake') && customArg.includes('c')){
+    console.log("New Password: " +  generateWCaps(length))
+}else if (userArguments.includes('--pwmake')&& customArg.includes('a')){
+    console.log("New Password: " +  generateWAll(length))
 }
 
