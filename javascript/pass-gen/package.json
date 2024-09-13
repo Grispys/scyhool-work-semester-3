@@ -1,0 +1,14 @@
+{
+  "name": "passgen",
+  "version": "1.0.0",
+  "description": "Password generator",
+  "main": "index.js",
+  "bin": {
+    "passgen": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew V",
+  "license": "ISC"
+}
