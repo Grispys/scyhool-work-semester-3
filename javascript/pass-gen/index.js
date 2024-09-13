@@ -3,8 +3,14 @@
 const process = require('node:process');
 
 const userArguments = process.argv.slice(2);
+
+// creates the length flag, 8 is default if lengtharg not given
 const lengthArg = process.argv[3]
 const length = parseInt(lengthArg, 8) || 8;
+
+// creates the customization flag
+const customArg = process.argv;[4]
+
 
 function errors(){
     console.error(
@@ -12,25 +18,31 @@ function errors(){
     )
 }
 
+
+// default password generator, only lower case
 function generateDefault(value) {
     let result = ' ';
     let length = value;
+    const characters = 'abcdefghijklmnopqrstuvwxyz'
     for(let i = 0; i < length; i++) {
-        result += 
-        String.fromCharCode(97 + Math.floor(Math.random() * 26));
+        const randomChars = Math.floor(Math.random()* characters.length);
+        result += characters[randomChars]
     }
     return result;
 }
 
-function generateWNum(value) {
+// password generator that allows numbers
+function generateWNums(value) {
     let result = ' ';
     let length = value;
+    const characters='abcdefghijklmnopqrstuvwxyz1234567890'; //both letters and numbers
     for(let i = 0; i < length; i++) {
-        result += 
-        String.fromCharCode(97 + Math.floor(Math.random() * 26));
+        const randomChars = Math.floor(Math.random() * characters.length);
+        result += characters[randomChars]
     }
     return result;
 }
+
 
 if (userArguments.includes('--help')){
     console.error(`
@@ -49,6 +61,10 @@ if (userArguments.includes('--help')){
 }else if (userArguments.length ==0){
     errors();
     return;
+
+}else if (userArguments.includes('--pwmake') && customArg.includes('n')){
+    console.log("New Password: " +  generateWNums(length))
+
 }else if (userArguments.includes('--pwmake')){
     console.log("New Password: " +  generateDefault(length))
 }
