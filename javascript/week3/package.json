@@ -1,0 +1,14 @@
+{
+  "name": "asyncy",
+  "version": "1.0.0",
+  "description": "test and example for async",
+  "main": "index.js",
+  "bin": {
+    "asyncy": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "m v",
+  "license": "ISC"
+}
