@@ -1,0 +1,14 @@
+{
+  "name": "week4",
+  "version": "1.0.0",
+  "description": "factorial testin",
+  "main": "index.js",
+  "bin": {
+    "factorial": "./index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "matthew v",
+  "license": "ISC"
+}
